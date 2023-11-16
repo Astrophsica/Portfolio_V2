@@ -1,0 +1,26 @@
+            - name: FTP Transfer
+  # You may pin to the exact commit or the version.
+  # uses: joutvhu/ftp-transfer@50bd98a47d757eb61bdaa3ba18c17484fbc98c27
+  uses: joutvhu/ftp-transfer@v1.0.0
+  with:
+    # The hostname or IP address of the FTP server.
+    host:  ftp.infinityfree.com
+    # The port of the FTP server.
+    port: # optional, default is 21
+    # Username for authentication.
+    username:  if0_35433168
+    # Password for authentication.
+    password: mDqd80MYchy0
+    # How long (in milliseconds) to wait for the control connection to be established.
+    connTimeout: # optional, default is 10000
+    # How long (in milliseconds) to wait for a PASV data connection to be established.
+    pasvTimeout: # optional, default is 10000
+    # How often (in milliseconds) to send a "dummy" (NOOP) command to keep the connection alive.
+    keepalive: # optional, default is 10000
+    # The ftp commands
+    commands: 
+    # Show ouputs
+    debug: # optional
+    # Fail when command execution failed
+    throwing: # optional
+          
