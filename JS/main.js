@@ -20,7 +20,7 @@ function CreateProjectCard(yearCard, project, projectId)
     const clone = template.content.cloneNode(true)
 
     var projectId = "Project" + projectId
-    
+
     var carouselInner = clone.querySelector(".carousel-inner")
     var carouselItem = document.createElement("div")
     carouselItem.setAttribute("class", "carousel-item active ratio ratio-16x9")
@@ -54,6 +54,7 @@ function CreateProjectCard(yearCard, project, projectId)
         tagElement.setAttribute("Class", "badge text-bg-primary")
         tagElement.textContent = project["Tags"][tag]
         clone.querySelector(".card-footer").append(tagElement)
+        clone.querySelector(".card-footer").append(" ")
     }
 
     yearCard.append(clone)
