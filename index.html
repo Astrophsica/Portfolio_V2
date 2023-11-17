@@ -54,9 +54,9 @@
             <div class="card mt-5 mb-5">
                 <h3 class="card-header text-center">2023</h3>
                 <div class="card-body">
-
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
+
                             <div class="card">
                                 <div id="HappyUnicornAdventureCarousel" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
@@ -108,9 +108,9 @@
                                     <span class="badge text-bg-secondary">Roblox</span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -424,16 +424,42 @@
             <div class="card mt-5 mb-5">
                 <h3 class="card-header text-center">2023</h3>
                 <div class="card-body">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                        
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="Cards">
 
-
-                        </div>
                     </div>
                 </div>
             </div>
         </template>
+
+        <template id="ProjectCardTemplate">
+            <div class="col">
+                <div class="card">
+                    <div class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active ratio ratio-16x9">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"></h3>
+                        <h5 class="card-subtitle text-body-secondary"></h5>
+                        <p class="card-text mt-3"></p>
+                        <p class="links">Links: </p>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </template>
+
 
     </main>
 
