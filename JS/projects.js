@@ -1,4 +1,4 @@
-var Projects = 
+const Projects = 
 {
     "Happy Unicorn Adventure" : 
     {
