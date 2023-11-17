@@ -30,9 +30,16 @@ function CreateProjectCard(yearCard, project, projectId)
 
     // Get carousel and add media
     var carouselInner = clone.querySelector(".carousel-inner")
-    var carouselItem = document.createElement("div")
-    carouselItem.setAttribute("class", "carousel-item active ratio ratio-16x9")
     for (i in project["Media"]) {
+        var carouselItem = document.createElement("div")
+        if (i == 0)
+        {
+            carouselItem.setAttribute("class", "carousel-item ratio active ratio-16x9") 
+        }
+        else
+        {
+            carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9") 
+        }
         var img = document.createElement("img")
         img.src = project["Media"][i]
         carouselItem.append(img)
@@ -41,8 +48,8 @@ function CreateProjectCard(yearCard, project, projectId)
 
     // Set up carousel unique ID
     clone.querySelector(".carousel").setAttribute("id", projectId)
-    clone.querySelector(".carousel-control-prev").setAttribute("data-bs-target", projectId)
-    clone.querySelector(".carousel-control-next").setAttribute("data-bs-target", projectId)
+    clone.querySelector(".carousel-control-prev").setAttribute("data-bs-target", "#" + projectId)
+    clone.querySelector(".carousel-control-next").setAttribute("data-bs-target", "#" + projectId)
 
     // Set title, subtitle and description
     clone.querySelector(".card-title").textContent = project["DisplayName"]
