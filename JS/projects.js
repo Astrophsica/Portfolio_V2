@@ -166,7 +166,7 @@ const Projects =
         "Tags" : ["Lua", "Roblox"]
     },
 
-    "Pizza Place Job System" : 
+    "Airline Check-In System" : 
     {
         "DisplayName" : "✈Airline Check-In System",
         "Year" : 2017,
