@@ -87,6 +87,67 @@ function CreateProjectCard(yearCard, project, projectId)
 function OnTagButtonClick(buttonElement)
 {
     console.log(buttonElement.textContent)
+    var tagName = buttonElement.textContent
+
+    Tags[tagName]["Enabled"] = !Tags[tagName]["Enabled"]
+    var tagsSection = document.getElementById("Tags")
+    var buttons = tagsSection.querySelectorAll("button")
+    for (var i = 0; i < buttons.length; i++)
+    {
+        if (buttons[i].textContent == tagName)
+        {
+            if (Tags[tagName]["Enabled"] == true)
+            {
+                buttons[i].setAttribute("Class", "m-1 btn btn-sm btn-" + Tags[tagName]["Type"])
+            }
+            else
+            {
+                buttons[i].setAttribute("class", "m-1 btn btn-sm btn-outline-" + Tags[tagName]["Type"])
+            }
+            break
+        }
+    }
+
+    var filterActive = false
+    for (var tagName in Tags)
+    {
+        if (Tags[tagName]["Enabled"] == true)
+        {
+            filterActive = true
+            break
+        }
+    }
+
+    var projectCards = document.getElementsByClassName("project")
+    for (var projectIndex = 0; projectIndex < projectCards.length; projectIndex++)
+    {
+        projectElement = projectCards[projectIndex]
+        showProject = true
+
+        if (filterActive)
+        {
+            var showProject = false
+            var badges = projectElement.querySelectorAll(".badge")
+            for (var badgeIndex = 0; badgeIndex < badges.length; badgeIndex++)
+            {
+                var badge = badges[badgeIndex]
+                if (Tags[badge.textContent]["Enabled"] == true)
+                {
+                    showProject = true
+                }
+            }
+        }
+
+
+        if (showProject == false)
+        {
+            projectElement.setAttribute("Class", "col project hidden")
+        }
+        else
+        {
+            projectElement.setAttribute("Class", "col project")
+        }
+    }
 }
 
 
