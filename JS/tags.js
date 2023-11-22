@@ -3,46 +3,46 @@ Tags =
     ["Lua"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Primary"
+        ["Type"] : "primary"
     },
     ["C#"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Primary"
+        ["Type"] : "primary"
     },
     ["Web (HTML | CSS | JavaScript)"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Primary"
+        ["Type"] : "primary"
     },
     ["Roblox"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
     ["Unity"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
     ["University"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
     ["Open Source"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
     ["OpenGL"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
     ["Shaders"] : 
     {
         ["Enabled"] : false,
-        ["Type"] : "Secondary"
+        ["Type"] : "secondary"
     },
 }
