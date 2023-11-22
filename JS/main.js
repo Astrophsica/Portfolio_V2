@@ -84,6 +84,12 @@ function CreateProjectCard(yearCard, project, projectId)
 }
 
 
+function OnTagButtonClick(buttonElement)
+{
+    console.log(buttonElement.textContent)
+}
+
+
 // Initialise
 var projectId = 0
 for (var key in Projects) {
@@ -107,6 +113,8 @@ for (var tagKey in Tags)
     var buttonElement = document.createElement("button")
     buttonElement.setAttribute("type", "button")
     buttonElement.setAttribute("class", "m-1 btn btn-sm btn-outline-" + Tags[tagKey]["Type"])
+    buttonElement.setAttribute("onclick", "OnTagButtonClick(this)")
     buttonElement.textContent = tagKey
     tagsSection.appendChild(buttonElement)
 }
+
