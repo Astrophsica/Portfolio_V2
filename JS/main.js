@@ -89,7 +89,10 @@ function OnTagButtonClick(buttonElement)
     console.log(buttonElement.textContent)
     var tagName = buttonElement.textContent
 
+    // Toggle tag enabled
     Tags[tagName]["Enabled"] = !Tags[tagName]["Enabled"]
+
+    // Find button for tag and set it to show if toggled or not
     var tagsSection = document.getElementById("Tags")
     var buttons = tagsSection.querySelectorAll("button")
     for (var i = 0; i < buttons.length; i++)
@@ -98,16 +101,17 @@ function OnTagButtonClick(buttonElement)
         {
             if (Tags[tagName]["Enabled"] == true)
             {
-                buttons[i].setAttribute("Class", "m-1 btn btn-sm btn-" + Tags[tagName]["Type"])
+                buttons[i].classList.replace("btn-outline-" + Tags[tagName]["Type"], "btn-" + Tags[tagName]["Type"])
             }
             else
             {
-                buttons[i].setAttribute("class", "m-1 btn btn-sm btn-outline-" + Tags[tagName]["Type"])
+                buttons[i].classList.replace("btn-" + Tags[tagName]["Type"], "btn-outline-" + Tags[tagName]["Type"])
             }
             break
         }
     }
 
+    // Check if any tags are enabled. If not, then show all project cards
     var filterActive = false
     for (var tagName in Tags)
     {
@@ -118,6 +122,7 @@ function OnTagButtonClick(buttonElement)
         }
     }
 
+    // Set project to show or hide based on toggled tags (or show all if no tag enabled)
     var projectCards = document.getElementsByClassName("project")
     for (var projectIndex = 0; projectIndex < projectCards.length; projectIndex++)
     {
@@ -141,11 +146,29 @@ function OnTagButtonClick(buttonElement)
 
         if (showProject == false)
         {
-            projectElement.setAttribute("Class", "col project hidden")
+            projectElement.classList.toggle("hidden", true)
         }
         else
         {
-            projectElement.setAttribute("Class", "col project")
+            projectElement.classList.toggle("hidden", false)
+        }
+    }
+
+    // Hide year if all projects in that year is hidden
+    var yearCards = document.getElementsByClassName("year")
+    for (var yearIndex = 0; yearIndex < yearCards.length; yearIndex++)
+    {
+        var yearElement = yearCards[yearIndex]
+        var hiddenCards = yearElement.querySelectorAll(".hidden")
+        var cards = yearElement.querySelectorAll(".project")
+        
+        if (hiddenCards.length == cards.length)
+        {
+            yearElement.classList.toggle("hidden", true)
+        }
+        else
+        {
+            yearElement.classList.toggle("hidden", false)
         }
     }
 }
@@ -168,6 +191,7 @@ for (var key in Projects) {
     CreateProjectCard(yearCard, project, projectId)
 }
 
+// Create filter tags
 var tagsSection = document.getElementById("Tags")
 for (var tagKey in Tags)
 {
