@@ -41,11 +41,30 @@ const Projects =
         "Tags" : ["C#", "Unity", "University", "Open Source"]
     },
 
+    "Go-Kart Kit" :
+    {
+        "DisplayName" : "🛠 Go-Kart Kit",
+        "Year" : 2021,
+        "Subtitle" : "Early 2021",
+        "Media" : 
+        [
+            "Media/Projects/Go-Kart_Kit/Go-Kart_Kit.png",
+        ],
+        "Description" : "A Go-Kart kit designed for other games to use. Includes go kart, spawn, safety lights with speed limiter, barriers, collision on/off, starting lights and anti cheat",
+        "Links" : 
+        {
+            "GitHub" : "https://github.com/Astrophsica/Racing-Kit-Roblox",
+            "Roblox" : "https://create.roblox.com/marketplace/asset/3719396356/Racing-Kit",
+            "Setup Guide (1hr)" : "https://www.youtube.com/watch?v=HJhDu9wpGzY"
+        },
+        "Tags" : ["Lua", "Roblox", "Open Source"]
+    },
+
     "Automatic Train Prototype" : 
     {
         "DisplayName" : "🚆Automatic Train Showcase",
         "Year" : 2021,
-        "Subtitle" : "Eary 2017, Updated 2021",
+        "Subtitle" : "Early 2017, Updated 2021",
         "Media" : 
         [
             "Media/Projects/Automatic_Train_Prototype/AutomaticTrainPrototype.png",
