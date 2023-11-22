@@ -1,3 +1,5 @@
+Tags = {}
+
 function GetYearCard(year)
 {
     return document.getElementById(year + "-cards")
@@ -70,9 +72,11 @@ function CreateProjectCard(yearCard, project, projectId)
     // Set tags
     for (var tag in project["Tags"])
     {
-        var tagElement = document.createElement("Span")
+        tagName = project["Tags"][tag]
+        Tags[tagName] = "secondary"
+        var tagElement = document.createElement("span")
         tagElement.setAttribute("Class", "badge text-bg-primary")
-        tagElement.textContent = project["Tags"][tag]
+        tagElement.textContent = tagName
         clone.querySelector(".card-footer").append(tagElement)
         clone.querySelector(".card-footer").append(" ")
     }
@@ -97,4 +101,14 @@ for (var key in Projects) {
     }
     
     CreateProjectCard(yearCard, project, projectId)
+}
+
+var tagsSection = document.getElementById("Tags")
+for (var tagKey in Tags)
+{
+    var buttonElement = document.createElement("button")
+    buttonElement.setAttribute("type", "button")
+    buttonElement.setAttribute("class", "btn btn-sm btn-outline-" + Tags[tagKey])
+    buttonElement.textContent = tagKey
+    tagsSection.appendChild(buttonElement)
 }
