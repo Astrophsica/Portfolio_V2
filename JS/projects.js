@@ -144,7 +144,7 @@ const Projects =
             "Video showcase" : "https://www.youtube.com/watch?v=h7mAIx-3hSA"
 
         },
-        "Tags" : ["Lua", "Roblox"]
+        "Tags" : ["Lua", "Roblox", "Open Source"]
     },
 
     "Rosebridge" : 
