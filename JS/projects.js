@@ -33,7 +33,7 @@ const Projects =
         "Description" : "A website created using HTML, JavaScript and Bootstrap. Features projects created by AstrophsicaDev/Humza with filter options to quickly find relavent experiences.",
         "Links" : 
         {
-            "Website" : "AstrophsicaDev.com"
+            "Website" : "https://astrophsicadev.com"
         },
         "Tags" : ["Web (HTML | CSS | JavaScript)", "Bootstrap"]
     },
