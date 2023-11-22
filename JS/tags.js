@@ -45,4 +45,9 @@ Tags =
         ["Enabled"] : false,
         ["Type"] : "secondary"
     },
+    ["Bootstrap"] : 
+    {
+        ["Enabled"] : false,
+        ["Type"] : "secondary"
+    }
 }

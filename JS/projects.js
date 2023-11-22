@@ -21,6 +21,23 @@ const Projects =
         "Tags" : ["Lua", "Roblox"]
     },
 
+    "Portfolio Site" : 
+    {
+        "DisplayName" : "🌐This Website",
+        "Year" : 2023,
+        "Subtitle" : "Late 2023",
+        "Media" : 
+        [
+            "Media/Projects/Portfolio/Spiderman_Meme.jpg",
+        ],
+        "Description" : "A website created using HTML, JavaScript and Bootstrap. Features projects created by AstrophsicaDev/Humza with filter options to quickly find relavent experiences.",
+        "Links" : 
+        {
+            "Website" : "AstrophsicaDev.com"
+        },
+        "Tags" : ["Web (HTML | CSS | JavaScript)", "Bootstrap"]
+    },
+
     "Alien Attack" : 
     {
         "DisplayName" : "👾Alien Attack",
