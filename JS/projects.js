@@ -182,7 +182,7 @@ const Projects =
             "Video showcase" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
 
         },
-        "Tags" : ["Lua", "Roblox"]
+        "Tags" : ["Lua", "Roblox", "Open Source"]
     },
 
     "Airline Check-In System" : 
