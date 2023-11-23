@@ -72,7 +72,7 @@ const Projects =
         {
             "GitHub" : "https://github.com/Astrophsica/Racing-Kit-Roblox",
             "Roblox" : "https://create.roblox.com/marketplace/asset/3719396356/Racing-Kit",
-            "Setup Guide (1hr)" : "https://www.youtube.com/watch?v=HJhDu9wpGzY"
+            "YouTube" : "https://www.youtube.com/watch?v=HJhDu9wpGzY"
         },
         "Tags" : ["Lua", "Roblox", "Open Source"]
     },
@@ -90,7 +90,7 @@ const Projects =
         "Links" : 
         {
             "Roblox" : "https://www.roblox.com/games/6307742596/Automatic-Subway",
-            "Video showcase" : "https://www.youtube.com/watch?v=nNcW2dh5hIY"
+            "YouTube" : "https://www.youtube.com/watch?v=nNcW2dh5hIY"
         },
         "Tags" : ["Lua", "Roblox", "Open Source"]
     },
@@ -107,7 +107,7 @@ const Projects =
         "Description" : "A University assignment to create a 3D scene using shaders and OpenGL. Achieved 96% on this assignment.",
         "Links" : 
         {
-            "Video showcase" : "https://www.youtube.com/watch?v=D6UlyFbpSFQ",
+            "YouTube" : "https://www.youtube.com/watch?v=D6UlyFbpSFQ",
         },
         "Tags" : ["C#", "OpenGL", "Shaders", "University"]
     },
@@ -158,7 +158,7 @@ const Projects =
         "Links" : 
         {
             "Roblox" : "https://www.roblox.com/games/2340807127/Glue-Attack",
-            "Video showcase" : "https://www.youtube.com/watch?v=h7mAIx-3hSA"
+            "YouTube" : "https://www.youtube.com/watch?v=h7mAIx-3hSA"
 
         },
         "Tags" : ["Lua", "Roblox", "Open Source"]
@@ -177,7 +177,7 @@ const Projects =
         "Links" : 
         {
             "Roblox" : "https://www.roblox.com/games/1104105275/Rosebridge-Classic",
-            "Video showcase" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
+            "YouTube" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
 
         },
         "Tags" : ["Lua", "Roblox"]
@@ -196,7 +196,7 @@ const Projects =
         "Links" : 
         {
             "Roblox" : "https://www.roblox.com/games/6585368981/OPEN-SOURCE-Job-System-Showcase",
-            "Video showcase" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
+            "YouTube" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
 
         },
         "Tags" : ["Lua", "Roblox", "Open Source"]
@@ -215,7 +215,7 @@ const Projects =
         "Links" : 
         {
             "Roblox" : "https://www.roblox.com/games/6585405619/OPEN-SOURCE-Airline-System-Showcase",
-            "Video showcase" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
+            "YouTube" : "https://www.youtube.com/watch?v=wSVVIZeM0b8"
 
         },
         "Tags" : ["Lua", "Roblox", "Open Source"]
