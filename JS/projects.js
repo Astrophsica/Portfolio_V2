@@ -53,7 +53,7 @@ const Projects =
         "Description" : "A tower defence game with option to add custom walls,which forcesenemies to travel around obstacles. This is a University third year team project.",
         "Links" : 
         {
-            "Github" : "https://github.com/Astrophsica/AlienAttack"
+            "GitHub" : "https://github.com/Astrophsica/AlienAttack"
         },
         "Tags" : ["C#", "Unity", "University", "Open Source"]
     },
