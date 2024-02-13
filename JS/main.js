@@ -63,7 +63,13 @@ function CreateProjectCard(yearCard, project, projectId)
         linkElement.setAttribute("href", project["Links"][linkKey])
         linkElement.setAttribute("class", "card-link")
         linkElement.setAttribute("target", "_blank")
-        linkElement.textContent = linkKey
+
+        var imgElement = document.createElement("img")
+        imgElement.setAttribute("src", Icons[linkKey])
+        imgElement.setAttribute("alt", linkKey)
+        imgElement.setAttribute("class", "icon")
+        linkElement.append(imgElement)
+
         clone.querySelector(".links").append(linkElement)
     }
 
