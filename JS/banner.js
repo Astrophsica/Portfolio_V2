@@ -2,23 +2,23 @@
 const canvas = document.getElementById("banner");
 const ctx = canvas.getContext("2d");
 
+var AnimatedImages = []
+var PrevoiusTimeStamp;
+var TimeStampOfLastSpawn;
+const ImageWidth = 355;
+const ImageHeight = 200;
+
 function CreateAnimatedImageObject(imgElement)
 {
     return {
     ["ImgElement"] : imgElement,
     ["Running"] : false,
     ["X"] : 0,
-    ["Y"] : 3
+    ["Y"] : 0
     }
 }
 
-var AnimatedImages = []
-var RunningImages = [];
-var currentRow = -1
-var prevoiusTimeStamp;
-var timeStampOfLastSpawn;
-const imageWidth = 355;
-const imageHeight = 200;
+
 
 for (var key in ProjectImages)
 {
@@ -28,16 +28,16 @@ for (var key in ProjectImages)
 
 function UpdateCanvas(timeStamp) {
     // Process elapsed time
-    if (prevoiusTimeStamp == undefined)
+    if (PrevoiusTimeStamp == undefined)
     {
-        prevoiusTimeStamp = timeStamp;
+        PrevoiusTimeStamp = timeStamp;
     }
 
-    if (prevoiusTimeStamp == timeStamp) {
+    if (PrevoiusTimeStamp == timeStamp) {
         requestAnimationFrame(UpdateCanvas);
     }
 
-    const deltaTime = timeStamp - prevoiusTimeStamp;
+    const deltaTime = timeStamp - PrevoiusTimeStamp;
 
     // Set canvas size
     canvas.width = window.innerWidth
@@ -52,7 +52,6 @@ function UpdateCanvas(timeStamp) {
     for (var animatedImageKey in AnimatedImages)
     {
         var animatedImage = AnimatedImages[animatedImageKey];
-        // Update existing images
         if (animatedImage["Running"] == true)
         {
             if (animatedImage["X"] < 0 - imageWidth)
@@ -61,13 +60,13 @@ function UpdateCanvas(timeStamp) {
                 continue;
             }
             animatedImage["X"] -= 0.1 * deltaTime;
-            ctx.drawImage(animatedImage["ImgElement"], Math.floor(animatedImage["X"]), animatedImage["Y"], imageWidth, imageHeight);
+            ctx.drawImage(animatedImage["ImgElement"], Math.floor(animatedImage["X"]), animatedImage["Y"], ImageWidth, ImageHeight);
             continue;
         }
     }
 
     // Create new moving images
-    if (timeStampOfLastSpawn == undefined || timeStamp - timeStampOfLastSpawn > 3475 )
+    if (TimeStampOfLastSpawn == undefined || timeStamp - TimeStampOfLastSpawn > 3475 )
     {  
         function filterToNotRunning(imageToFilter)
         {
@@ -81,13 +80,8 @@ function UpdateCanvas(timeStamp) {
         var randomIndex = Math.floor(Math.random() * (nonRunningImages.length - 1));
         animatedImage = nonRunningImages[randomIndex]
         animatedImage["X"] = Math.floor(canvas.width);
-        if (currentRow == 2)
-        {
-            animatedImage["X"] = Math.floor(canvas.width - (imageWidth / 2));
-        }
-        
         animatedImage["Running"] = true;
-        timeStampOfLastSpawn = timeStamp;
+        TimeStampOfLastSpawn = timeStamp;
     }
 
     // Set overlay to semi transparent black
@@ -114,7 +108,7 @@ function UpdateCanvas(timeStamp) {
 
     ctx.fillText(text, (canvas.width / 2) - textActualSize.width / 2, (canvas.height / 2) + textActualSize.emHeightAscent / 2)
 
-    prevoiusTimeStamp = timeStamp;
+    PrevoiusTimeStamp = timeStamp;
 }
 
 window.onload = function(){
