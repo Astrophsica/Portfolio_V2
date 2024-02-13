@@ -47,6 +47,12 @@ function CreateProjectCard(yearCard, project, projectId)
         ProjectImages.push(img)
         carouselItem.append(img)
         carouselInner.append(carouselItem)
+
+        if (project["Media"].length == 1)
+        {
+            clone.querySelector(".carousel-control-prev").classList.add("hidden")
+            clone.querySelector(".carousel-control-next").classList.add("hidden")
+        }
     }
 
     // Set up carousel unique ID
