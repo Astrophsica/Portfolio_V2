@@ -203,3 +203,42 @@ for (var tagKey in Tags)
     tagsSection.appendChild(buttonElement)
 }
 
+
+
+// Banner
+const canvas = document.getElementById("banner");
+const ctx = canvas.getContext("2d");
+
+window.addEventListener('resize', resetCanvas, false)
+
+function resetCanvas() {
+    // Set canvas size
+    canvas.width = window.innerWidth
+    canvas.height = 200
+
+    // Set background to black
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Create title text
+    var textFontSize = 75
+    ctx.fillStyle = "white"
+    ctx.font = textFontSize.toString() + "px Ubuntu"
+    const text = "AstrophsicaDev"
+    var textActualSize = ctx.measureText(text)
+
+    if (canvas.width < textActualSize.width)
+    {
+        var percentageToShrink = canvas.width / textActualSize.width
+        textFontSize = Math.floor(textFontSize * percentageToShrink) 
+        ctx.font = textFontSize.toString() + "px Ubuntu"
+        textActualSize = ctx.measureText(text)
+    }
+
+    ctx.fillText(text, (canvas.width / 2) - textActualSize.width / 2, (canvas.height / 2) + textActualSize.emHeightAscent / 2)
+}
+
+resetCanvas()
+
+
+
