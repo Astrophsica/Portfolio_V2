@@ -54,7 +54,7 @@ function UpdateCanvas(timeStamp) {
         var animatedImage = AnimatedImages[animatedImageKey];
         if (animatedImage["Running"] == true)
         {
-            if (animatedImage["X"] < 0 - imageWidth)
+            if (animatedImage["X"] < 0 - ImageWidth)
             {
                 animatedImage["Running"] = false;
                 continue;
