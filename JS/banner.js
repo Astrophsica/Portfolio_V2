@@ -29,7 +29,6 @@ for (var key in ProjectImages)
 }
 
 function UpdateCanvas(timeStamp) {
-    console.log(timeStamp)
     // Process elapsed time
     if (PrevoiusTimeStamp == undefined)
     {
