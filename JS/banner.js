@@ -37,7 +37,7 @@ function UpdateCanvas(timeStamp) {
     }
 
     if (PrevoiusTimeStamp == timeStamp) {
-        requestAnimationFrame(UpdateCanvas);
+        return
     }
 
     Rendering = true;
