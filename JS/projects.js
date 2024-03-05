@@ -8,10 +8,10 @@ const Projects =
         "Media" : 
         [
             "Media/Projects/Happy_Unicorn_Adventure/HappyUnicornAdventure.png",
-            "Media/Projects/Happy_Unicorn_Adventure/Luck_Minigame.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Lizard_Minigame.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Shop.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Dragon.gif"
+            "Media/Projects/Happy_Unicorn_Adventure/Luck_Minigame-LowRes.gif",
+            "Media/Projects/Happy_Unicorn_Adventure/Lizard_Minigame-LowRes.gif",
+            "Media/Projects/Happy_Unicorn_Adventure/Shop-LowRes.gif",
+            "Media/Projects/Happy_Unicorn_Adventure/Dragon-LowRes.gif"
         ],
         "Description" : "A unicorn themed game targeted towards young audiences (under 10). Contains 30 minigames ranging from avoiding dragon flames 🐉, flipping a coin 🍀, completing obstacles (AKA Obbies) and much more. There are different game modes like Party mode and Elimination mode.",
         "Links" : 
