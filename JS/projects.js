@@ -46,9 +46,9 @@ const Projects =
         "Media" : 
         [
             "Media/Projects/Alien_Attack/AlienAttack.png",
-            "Media/Projects/Alien_Attack/Alien_Attack_Placement.gif",
-            "Media/Projects/Alien_Attack/Alien_Attack_Wall.gif",
-            "Media/Projects/Alien_Attack/Alien_Attack_Turret.gif"
+            "Media/Projects/Alien_Attack/Alien_Attack_Placement-LowRes.gif",
+            "Media/Projects/Alien_Attack/Alien_Attack_Wall-LowRes.gif",
+            "Media/Projects/Alien_Attack/Alien_Attack_Turret-LowRes.gif"
         ],
         "Description" : "A tower defence game with option to add custom walls,which forcesenemies to travel around obstacles. This is a University third year team project.",
         "Links" : 
