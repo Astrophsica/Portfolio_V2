@@ -124,5 +124,5 @@ window.onload = function(){
         }
         
     }
-    setInterval(RunAnimateFrame, 16)
+    setInterval(RunAnimateFrame, 100)
 }
