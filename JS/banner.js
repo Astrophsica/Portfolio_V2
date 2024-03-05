@@ -118,11 +118,11 @@ function UpdateCanvas(timeStamp) {
 window.onload = function(){
     function RunAnimateFrame()
     {
-        if (Rendering == true)
+        if (Rendering == false)
         {
             requestAnimationFrame(UpdateCanvas)
         }
         
     }
-    setInterval(RunAnimateFrame, 100)
+    setInterval(RunAnimateFrame, 16)
 }
