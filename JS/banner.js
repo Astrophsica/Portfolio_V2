@@ -116,5 +116,5 @@ window.onload = function(){
     {
         requestAnimationFrame(UpdateCanvas)
     }
-    setInterval(RunAnimateFrame, 10)
+    setInterval(RunAnimateFrame, 100)
 }
