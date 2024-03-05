@@ -3,6 +3,7 @@ const canvas = document.getElementById("banner");
 const ctx = canvas.getContext("2d");
 
 var Rendering = false;
+var focused = false;
 var AnimatedImages = []
 var PrevoiusTimeStamp;
 var TimeStampOfLastSpawn;
@@ -28,6 +29,7 @@ for (var key in ProjectImages)
 }
 
 function UpdateCanvas(timeStamp) {
+    console.log(timeStamp)
     // Process elapsed time
     if (PrevoiusTimeStamp == undefined)
     {
@@ -115,6 +117,7 @@ function UpdateCanvas(timeStamp) {
     Rendering = false;
 }
 
+
 window.onload = function(){
     function RunAnimateFrame()
     {
@@ -122,7 +125,6 @@ window.onload = function(){
         {
             requestAnimationFrame(UpdateCanvas)
         }
-        
     }
-    setInterval(RunAnimateFrame, 100)
+    setInterval(RunAnimateFrame, 16)
 }
