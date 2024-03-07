@@ -1,4 +1,4 @@
-Tags = 
+var Tags = 
 {
     ["Lua"] : 
     {

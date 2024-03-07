@@ -1,4 +1,4 @@
-import { Media } from "./media";
+import { Media } from "./media.js";
 
 function LodLoadMedia(mediaRef)
 {
@@ -11,7 +11,7 @@ function LodLoadMedia(mediaRef)
 
     var visibleImg = new Image()
     var currentLod = 0
-    for (i in mediaList) {
+    for (var i in mediaList) {
         var img = new Image()
         img.src = mediaList[i]
         img.onload = function() {
