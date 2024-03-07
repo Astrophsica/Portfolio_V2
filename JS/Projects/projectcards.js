@@ -1,4 +1,6 @@
 import { Projects } from "./projects"
+import { Media } from "../media"
+import { Tags } from "./tags"
 
 var ProjectImages = []
 

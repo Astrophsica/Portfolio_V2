@@ -51,3 +51,5 @@ Tags =
         ["Type"] : "secondary"
     }
 }
+
+export {Tags}

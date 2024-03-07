@@ -107,3 +107,5 @@ const Media =
     "WebsiteIcon" : ["Media/Icons/Website.svg"],
     "GitHubIcon" : ["Media/Icons/GitHub.svg"]
 }
+
+export {Media}
