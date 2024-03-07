@@ -1,3 +1,5 @@
+import { Projects } from "./projects"
+
 var ProjectImages = []
 
 function GetYearCard(year)
