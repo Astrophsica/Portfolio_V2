@@ -1,9 +1,7 @@
 const Media = 
 {
-    "HappyUnicornAdventure/Thumbnail" : 
-    [
-        "Media/Projects/Happy_Unicorn_Adventure/HappyUnicornAdventure.png"
-    ],
+    // Happy Unicorn Adventure
+    "HappyUnicornAdventure/Thumbnail" : ["Media/Projects/Happy_Unicorn_Adventure/HappyUnicornAdventure.png"],
 
     "HappyUnicornAdventure/LuckMinigame" : 
     [
@@ -31,17 +29,13 @@ const Media =
 
 
 
-    "PortfolioSite/Thumbnail" : 
-    [
-        "Media/Projects/Portfolio/Spiderman_Meme.jpg",
-    ],
+    // Portfolio site
+    "PortfolioSite/Thumbnail" : ["Media/Projects/Portfolio/Spiderman_Meme.jpg"],
 
 
 
-    "AlienAttack/Thumbnail" : 
-    [
-        "Media/Projects/Alien_Attack/AlienAttack.png",
-    ],
+    // Alien attack
+    "AlienAttack/Thumbnail" : ["Media/Projects/Alien_Attack/AlienAttack.png"],
 
     "AlienAttack/Placement" : 
     [
@@ -63,64 +57,53 @@ const Media =
 
 
 
-    "GoKartKit/Thumbnail" : 
-    [
-        "Media/Projects/Go-Kart_Kit/Go-Kart_Kit.png"
-    ],
+    // Go-Kart kit
+    "GoKartKit/Thumbnail" : [ "Media/Projects/Go-Kart_Kit/Go-Kart_Kit.png"],
 
 
 
-    "AutomaticTrainPrototype/Thumbnail" : 
-    [
-        "Media/Projects/Automatic_Train_Prototype/AutomaticTrainPrototype.png"
-    ],
+    // Automatic train prototype
+    "AutomaticTrainPrototype/Thumbnail" : ["Media/Projects/Automatic_Train_Prototype/AutomaticTrainPrototype.png"],
 
 
 
-    "3DGraphics/Thumbnail" : 
-    [
-        "Media/Projects/3D_Graphics/3D_Graphics.png"
-    ],
+    // 3D Graphics
+    "3DGraphics/Thumbnail" : ["Media/Projects/3D_Graphics/3D_Graphics.png"],
 
 
 
-    "2DGraphics/Thumbnail" : 
-    [
-        "Media/Projects/2D_Graphics_HTML5/2D_Graphics.png"
-    ],
+    // 2D Graphics
+    "2DGraphics/Thumbnail" : ["Media/Projects/2D_Graphics_HTML5/2D_Graphics.png"],
 
 
 
-    "GoKartingXtreme/Thumbnail" : 
-    [
-        "Media/Projects/Go-Karting_Xtreme/GKX.png"
-    ],
+    // Go-Karting Xtreme
+    "GoKartingXtreme/Thumbnail" : [ "Media/Projects/Go-Karting_Xtreme/GKX.png"],
 
 
 
-    "ThreeThingGameJam/Thumbnail" : 
-    [
-        "Media/Projects/Three_Thing_Game/Three_Thing_Game.png"
-    ],
+    // Three Thing Game
+    "ThreeThingGameJam/Thumbnail" : ["Media/Projects/Three_Thing_Game/Three_Thing_Game.png"],
 
 
     
-    "Rosebridge/Thumbnail" : 
-    [
-        "Media/Projects/Rosebridge/Rosebridge.jpg"
-    ],
+    // Rosebridge
+    "Rosebridge/Thumbnail" : ["Media/Projects/Rosebridge/Rosebridge.jpg"],
 
 
 
-    "PizzaPlaceJobSystem/Thumbnail" : 
-    [
-        "Media/Projects/Pizza_Place_Job_System/PizzaPlace.png"
-    ],
+    // Pizza place job system
+    "PizzaPlaceJobSystem/Thumbnail" : ["Media/Projects/Pizza_Place_Job_System/PizzaPlace.png"],
 
 
 
-    "AirlineCheckInSystem/Thumbnail" : 
-    [
-        "Media/Projects/Airline_Check-In_System/Airline_Check-In_System.png"
-    ],
+    // Airline check-in system
+    "AirlineCheckInSystem/Thumbnail" : ["Media/Projects/Airline_Check-In_System/Airline_Check-In_System.png"],
+
+
+    // Icons
+    "RobloxIcon" : ["Media/Icons/Roblox.svg"],
+    "YouTubeIcon" : ["Media/Icons/YouTube.svg"],
+    "WebsiteIcon" : ["Media/Icons/Website.svg"],
+    "GitHubIcon" : ["Media/Icons/GitHub.svg"]
 }
