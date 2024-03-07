@@ -12,20 +12,19 @@ function LodLoadMedia(mediaRef)
     var visibleImg = new Image()
     var lod = 0
 
-    function LoadImg(lod)
+    async function LoadImg(lod)
     {
         var img = new Image()
-        img.src = mediaList[lod]
         if (lod > 0)
         {
-            img.decode = "async"
+            img.decoding = "async"
         }
-        img.onload = function() {
-            visibleImg.src = img.src
-            if (mediaList.length - 1 != lod)
-            {
-                LoadImg(lod + 1)
-            }
+        img.src = mediaList[lod]
+        await img.decode();
+        visibleImg.src = img.src
+        if (mediaList.length - 1 != lod)
+        {
+            LoadImg(lod + 1)
         }
     }
 

@@ -25,6 +25,22 @@ function CreateYearCard(year)
 }
 
 
+async function RemoveImgPlaceholderOnLoad(parentElement, img)
+{
+    var observer = new MutationObserver((changes) => {
+        changes.forEach(change => {
+            if(change.attributeName.includes('src')){
+                parentElement.classList.remove("placeholder-glow")
+                img.classList.remove("placeholder")
+            }
+        });
+      });
+    observer.observe(img, {attributes : true});
+
+
+}
+
+
 function CreateProjectCard(yearCard, project, projectId)
 {
     // Get template and clone
@@ -47,6 +63,12 @@ function CreateProjectCard(yearCard, project, projectId)
             carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9")
         }
         var img = LodLoadMedia(project["MediaRef"][i])
+        if (img.src == "")
+        {
+            carouselItem.classList.add("placeholder-glow")
+            img.classList.add("placeholder")
+            RemoveImgPlaceholderOnLoad(carouselItem, img)
+        }
         ProjectImages.push(img)
         carouselItem.append(img)
         carouselInner.append(carouselItem)
