@@ -1,5 +1,5 @@
 import { Projects } from "./projects"
-import { Media } from "../media"
+import { LodLoadMedia } from "../mediamanager"
 import { Tags } from "./tags"
 
 var ProjectImages = []
@@ -44,10 +44,9 @@ function CreateProjectCard(yearCard, project, projectId)
         }
         else
         {
-            carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9") 
+            carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9")
         }
-        var img = document.createElement("img")
-        img.src = project["Media"][i]
+        var img = LodLoadMedia(project["Media"][i])
         ProjectImages.push(img)
         carouselItem.append(img)
         carouselInner.append(carouselItem)
@@ -77,8 +76,7 @@ function CreateProjectCard(yearCard, project, projectId)
         linkElement.setAttribute("class", "card-link")
         linkElement.setAttribute("target", "_blank")
 
-        var imgElement = document.createElement("img")
-        imgElement.setAttribute("src", Icons[linkKey])
+        var imgElement = LodLoadMedia(Icons[linkKey])
         imgElement.setAttribute("alt", linkKey)
         imgElement.setAttribute("class", "icon")
         linkElement.append(imgElement)
