@@ -5,13 +5,13 @@ const Projects =
         "DisplayName" : "🦄Happy Unicorn Adventure",
         "Year" : 2023,
         "Subtitle" : "Present",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Happy_Unicorn_Adventure/HappyUnicornAdventure.png",
-            "Media/Projects/Happy_Unicorn_Adventure/Luck_Minigame-LowRes.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Lizard_Minigame-LowRes.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Shop-LowRes.gif",
-            "Media/Projects/Happy_Unicorn_Adventure/Dragon-LowRes.gif"
+            "HappyUnicornAdventure/Thumbnail",
+            "HappyUnicornAdventure/LuckMinigame",
+            "HappyUnicornAdventure/LizardMinigame",
+            "HappyUnicornAdventure/Shop",
+            "HappyUnicornAdventure/Dragon"
         ],
         "Description" : "A unicorn themed game targeted towards young audiences (under 10). Contains 30 minigames ranging from avoiding dragon flames 🐉, flipping a coin 🍀, completing obstacles (AKA Obbies) and much more. There are different game modes like Party mode and Elimination mode.",
         "Links" : 
@@ -26,9 +26,9 @@ const Projects =
         "DisplayName" : "🌐This Website",
         "Year" : 2023,
         "Subtitle" : "Late 2023",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Portfolio/Spiderman_Meme.jpg",
+            "PortfolioSite/Thumbnail",
         ],
         "Description" : "A website created using HTML, JavaScript and Bootstrap. Features projects created by AstrophsicaDev/Humza with filter options to quickly find relavent experiences.",
         "Links" : 
@@ -43,12 +43,12 @@ const Projects =
         "DisplayName" : "👾Alien Attack",
         "Year" : 2022,
         "Subtitle" : "Early 2022",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Alien_Attack/AlienAttack.png",
-            "Media/Projects/Alien_Attack/Alien_Attack_Placement-LowRes.gif",
-            "Media/Projects/Alien_Attack/Alien_Attack_Wall-LowRes.gif",
-            "Media/Projects/Alien_Attack/Alien_Attack_Turret-LowRes.gif"
+            "AlienAttack/Thumbnail",
+            "AlienAttack/Placement",
+            "AlienAttack/Wall",
+            "AlienAttack/Turret"
         ],
         "Description" : "A tower defence game with option to add custom walls,which forcesenemies to travel around obstacles. This is a University third year team project.",
         "Links" : 
@@ -63,9 +63,9 @@ const Projects =
         "DisplayName" : "🛠 Go-Kart Kit",
         "Year" : 2021,
         "Subtitle" : "Early 2021",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Go-Kart_Kit/Go-Kart_Kit.png",
+            "GoKartKit/Thumbnail"
         ],
         "Description" : "A Go-Kart kit designed for other games to use. Includes go kart, spawn, safety lights with speed limiter, barriers, collision on/off, starting lights and anti cheat",
         "Links" : 
@@ -82,9 +82,9 @@ const Projects =
         "DisplayName" : "🚆Automatic Train Showcase",
         "Year" : 2021,
         "Subtitle" : "Early 2017, Updated 2021",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Automatic_Train_Prototype/AutomaticTrainPrototype.png",
+            "AutomaticTrainPrototype/Thumbnail",
         ],
         "Description" : "An automatic train based on set position rather than Roblox engine physics. Includes platform doors, station announcements and train screens.",
         "Links" : 
@@ -100,9 +100,9 @@ const Projects =
         "DisplayName" : "🎮 3D Graphics OpenGL & Shaders",
         "Year" : 2020,
         "Subtitle" : "Early 2020",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/3D_Graphics/3D_Graphics.png",
+            "3DGraphics/Thumbnail",
         ],
         "Description" : "A University assignment to create a 3D scene using shaders and OpenGL. Achieved 96% on this assignment.",
         "Links" : 
@@ -117,9 +117,9 @@ const Projects =
         "DisplayName" : "2D Graphics HTML5",
         "Year" : 2019,
         "Subtitle" : "Late 2019",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/2D_Graphics_HTML5/2D_Graphics.png",
+            "2DGraphics/Thumbnail",
         ],
         "Description" : "A university assignment to create a HTML Canvas that is used to show 2D graphics. Task involved displaying Media, drawing shape, rotating and moving objects.",
         "Links" : 
@@ -133,9 +133,9 @@ const Projects =
         "DisplayName" : "🏎Go-Karting Xtreme",
         "Year" : 2019,
         "Subtitle" : "Late 2019",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Go-Karting_Xtreme/GKX.png",
+            "GoKartingXtreme/Thumbnail",
         ],
         "Description" : "A roleplay Go-Karting game which is designed to be ran by other players. Achieved 150,000 visits before being sold for £100 to MarketManager1",
         "Links" : 
@@ -150,9 +150,9 @@ const Projects =
         "DisplayName" : "Three Thing Game Jam",
         "Year" : 2019,
         "Subtitle" : "Early 2019",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Three_Thing_Game/Three_Thing_Game.png",
+            "ThreeThingGameJam/Thumbnail",
         ],
         "Description" : "A game developed solo as part of a 24 hour university game jam. The game had to be based on three randomly selected words, which was Playing, Going and Glue.",
         "Links" : 
@@ -169,9 +169,9 @@ const Projects =
         "DisplayName" : "Rosebridge",
         "Year" : 2017,
         "Subtitle" : "Late 2017",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Rosebridge/Rosebridge.jpg",
+            "Rosebridge/Thumbnail"
         ],
         "Description" : "Rosebridge is a city roleplay game, where I was responsible for making the car spawn (including UI), house ownership and (simple) job system.",
         "Links" : 
@@ -188,9 +188,9 @@ const Projects =
         "DisplayName" : "🍕Pizza Place Job System",
         "Year" : 2017,
         "Subtitle" : "Late 2017",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Pizza_Place_Job_System/PizzaPlace.png",
+            "PizzaPlaceJobSystem/Thumbnail"
         ],
         "Description" : "A job system that creates NPCs as customers, who request specific food & drink items. Players can work at the till to enter the order details.",
         "Links" : 
@@ -207,9 +207,9 @@ const Projects =
         "DisplayName" : "✈Airline Check-In System",
         "Year" : 2017,
         "Subtitle" : "Mid 2017",
-        "Media" : 
+        "MediaRef" : 
         [
-            "Media/Projects/Airline_Check-In_System/Airline_Check-In_System.png",
+            "AirlineCheckInSystem/Thumbnail"
         ],
         "Description" : "Originally designed for an airline role play game, this project involved making an automatic and manual check-in system.",
         "Links" : 

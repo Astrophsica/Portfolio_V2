@@ -104,14 +104,7 @@ const Media =
     ],
 
 
-
-    "ThreeThingGameJam/Thumbnail" : 
-    [
-        "Media/Projects/Three_Thing_Game/Three_Thing_Game.png"
-    ],
-
-
-
+    
     "Rosebridge/Thumbnail" : 
     [
         "Media/Projects/Rosebridge/Rosebridge.jpg"
