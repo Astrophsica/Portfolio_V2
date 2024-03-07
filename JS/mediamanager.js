@@ -10,18 +10,26 @@ function LodLoadMedia(mediaRef)
     }
 
     var visibleImg = new Image()
-    var currentLod = 0
-    for (var i in mediaList) {
+    var lod = 0
+
+    function LoadImg(lod)
+    {
         var img = new Image()
-        img.src = mediaList[i]
+        img.src = mediaList[lod]
+        if (lod > 0)
+        {
+            img.decode = "async"
+        }
         img.onload = function() {
-            if (currentLod <= i)
+            visibleImg.src = img.src
+            if (mediaList.length - 1 != lod)
             {
-                visibleImg.src = mediaList[i]
-                currentLod = i
+                LoadImg(lod + 1)
             }
         }
     }
+
+    LoadImg(lod)
 
     return visibleImg
 }
