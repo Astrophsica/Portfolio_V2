@@ -2,7 +2,6 @@
 const canvas = document.getElementById("banner");
 const ctx = canvas.getContext("2d");
 
-var Rendering = false;
 var focused = false;
 var AnimatedImages = []
 var PrevoiusTimeStamp;
@@ -36,10 +35,9 @@ function UpdateCanvas(timeStamp) {
     }
 
     if (PrevoiusTimeStamp == timeStamp) {
+        setTimeout(requestAnimationFrame(UpdateCanvas), 10)
         return
     }
-
-    Rendering = true;
     const deltaTime = timeStamp - PrevoiusTimeStamp;
 
     // Set canvas size
@@ -112,18 +110,10 @@ function UpdateCanvas(timeStamp) {
     ctx.fillText(text, (canvas.width / 2) - textActualSize.width / 2, (canvas.height / 2) + textActualSize.emHeightAscent / 2)
 
     PrevoiusTimeStamp = timeStamp;
-
-    Rendering = false;
+    requestAnimationFrame(UpdateCanvas);
 }
 
 
 window.onload = function(){
-    function RunAnimateFrame()
-    {
-        if (Rendering == false)
-        {
-            requestAnimationFrame(UpdateCanvas)
-        }
-    }
-    setInterval(RunAnimateFrame, 16)
+    requestAnimationFrame(UpdateCanvas)
 }
