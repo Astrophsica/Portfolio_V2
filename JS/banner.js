@@ -1,3 +1,6 @@
+import { Projects } from "./Projects/projects.js";
+import { LodLoadMedia } from "./mediamanager.js";
+
 // Banner
 const canvas = document.getElementById("banner");
 const ctx = canvas.getContext("2d");
@@ -21,11 +24,16 @@ function CreateAnimatedImageObject(imgElement)
 
 
 
-for (var key in ProjectImages)
+for (var a in Projects)
 {
-    var animatedImageObject = CreateAnimatedImageObject(ProjectImages[key]);
-    AnimatedImages.push(animatedImageObject);
+    for (var b in Projects[a]["MediaRef"])
+    {
+        var img = LodLoadMedia(Projects[a]["MediaRef"][b])
+        var animatedImageObject = CreateAnimatedImageObject(img);
+        AnimatedImages.push(animatedImageObject);
+    }
 }
+
 
 function UpdateCanvas(timeStamp) {
     // Process elapsed time
@@ -114,6 +122,5 @@ function UpdateCanvas(timeStamp) {
 }
 
 
-window.onload = function(){
-    requestAnimationFrame(UpdateCanvas)
-}
+
+requestAnimationFrame(UpdateCanvas)
