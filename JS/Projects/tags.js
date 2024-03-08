@@ -1,4 +1,4 @@
-Tags = 
+var Tags = 
 {
     ["Lua"] : 
     {
@@ -51,3 +51,5 @@ Tags =
         ["Type"] : "secondary"
     }
 }
+
+export {Tags}

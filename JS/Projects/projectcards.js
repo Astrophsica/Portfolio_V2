@@ -1,3 +1,7 @@
+import { Projects } from "./projects.js"
+import { LodLoadMedia } from "../mediamanager.js"
+import { Tags } from "./tags.js"
+
 var ProjectImages = []
 
 function GetYearCard(year)
@@ -21,6 +25,22 @@ function CreateYearCard(year)
 }
 
 
+async function RemoveImgPlaceholderOnLoad(parentElement, img)
+{
+    var observer = new MutationObserver((changes) => {
+        changes.forEach(change => {
+            if(change.attributeName.includes('src')){
+                parentElement.classList.remove("placeholder-glow")
+                img.classList.remove("placeholder")
+            }
+        });
+      });
+    observer.observe(img, {attributes : true});
+
+
+}
+
+
 function CreateProjectCard(yearCard, project, projectId)
 {
     // Get template and clone
@@ -32,7 +52,7 @@ function CreateProjectCard(yearCard, project, projectId)
 
     // Get carousel and add media
     var carouselInner = clone.querySelector(".carousel-inner")
-    for (i in project["Media"]) {
+    for (var i in project["MediaRef"]) {
         var carouselItem = document.createElement("div")
         if (i == 0)
         {
@@ -40,15 +60,20 @@ function CreateProjectCard(yearCard, project, projectId)
         }
         else
         {
-            carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9") 
+            carouselItem.setAttribute("class", "carousel-item ratio ratio-16x9")
         }
-        var img = document.createElement("img")
-        img.src = project["Media"][i]
+        var img = LodLoadMedia(project["MediaRef"][i])
+        if (img.src == "")
+        {
+            carouselItem.classList.add("placeholder-glow")
+            img.classList.add("placeholder")
+            RemoveImgPlaceholderOnLoad(carouselItem, img)
+        }
         ProjectImages.push(img)
         carouselItem.append(img)
         carouselInner.append(carouselItem)
 
-        if (project["Media"].length == 1)
+        if (project["MediaRef"].length == 1)
         {
             clone.querySelector(".carousel-control-prev").classList.add("hidden")
             clone.querySelector(".carousel-control-next").classList.add("hidden")
@@ -73,8 +98,7 @@ function CreateProjectCard(yearCard, project, projectId)
         linkElement.setAttribute("class", "card-link")
         linkElement.setAttribute("target", "_blank")
 
-        var imgElement = document.createElement("img")
-        imgElement.setAttribute("src", Icons[linkKey])
+        var imgElement = LodLoadMedia(linkKey + "Icon")
         imgElement.setAttribute("alt", linkKey)
         imgElement.setAttribute("class", "icon")
         linkElement.append(imgElement)
