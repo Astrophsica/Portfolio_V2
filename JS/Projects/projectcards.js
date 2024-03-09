@@ -36,8 +36,6 @@ async function RemoveImgPlaceholderOnLoad(parentElement, img)
         });
       });
     observer.observe(img, {attributes : true});
-
-
 }
 
 
