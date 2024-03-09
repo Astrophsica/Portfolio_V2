@@ -11,14 +11,40 @@ var PrevoiusTimeStamp;
 var TimeStampOfLastSpawn;
 const ImageWidth = 355;
 const ImageHeight = 200;
+var ScrollingCanvasX = 0;
+var RunningImages = [];
+
+
+async function UpdateImageOnSrcChange(imgElement, canvasCtx)
+{
+    var observer = new MutationObserver((changes) => {
+        changes.forEach(change => {
+            if(change.attributeName.includes('src')){
+                canvasCtx.drawImage(imgElement, 0, 0, ImageWidth, ImageHeight);
+            }
+        });
+      });
+    observer.observe(img, {attributes : true});
+}
+
+
+
+function CreateOffscreenCanvas(imgElement)
+{
+    let newCanvas = new OffscreenCanvas(ImageWidth, ImageHeight)
+    const newCanvasCtx = newCanvas.getContext("2d");
+
+    newCanvasCtx.drawImage(imgElement, 0, 0, ImageWidth, ImageHeight)
+    UpdateImageOnSrcChange(imgElement, newCanvasCtx)
+    return newCanvas
+}
 
 function CreateAnimatedImageObject(imgElement)
 {
     return {
     ["ImgElement"] : imgElement,
     ["Running"] : false,
-    ["X"] : 0,
-    ["Y"] : 0
+    ["OffscreenCanvas"] : CreateOffscreenCanvas(imgElement)
     }
 }
 
@@ -57,26 +83,38 @@ function UpdateCanvas(timeStamp) {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Update moving images
-    for (var animatedImageKey in AnimatedImages)
-    {
-        var animatedImage = AnimatedImages[animatedImageKey];
-        if (animatedImage["Running"] == true)
+
+    // Update existing images
+    ScrollingCanvasX -= 0.1 * deltaTime
+    
+    for (let i = 0; i < RunningImages.length; i++) 
+    { 
+        let imageObject = RunningImages[i];
+        
+        // Check if image is not visible (left side)
+        if ((i * ImageWidth) + ScrollingCanvasX < 0 - ImageWidth)
         {
-            if (animatedImage["X"] < 0 - ImageWidth)
-            {
-                animatedImage["Running"] = false;
-                continue;
-            }
-            animatedImage["X"] -= 0.1 * deltaTime;
-            ctx.drawImage(animatedImage["ImgElement"], Math.floor(animatedImage["X"]), animatedImage["Y"], ImageWidth, ImageHeight);
-            continue;
+            imageObject["Running"] = false;
+            RunningImages.shift();
+            ScrollingCanvasX = ScrollingCanvasX + ImageWidth;
+            imageObject = RunningImages[i];
         }
+
+        // Check if image is not visible (right side)
+        if((i * ImageWidth) + ScrollingCanvasX > canvas.width)
+        {
+            imageObject["Running"] = false;
+            RunningImages.splice(i)
+            break;
+        }
+
+        ctx.drawImage(imageObject["OffscreenCanvas"], (i * ImageWidth) + ScrollingCanvasX, 0)
     }
 
-    // Create new moving images
-    if (TimeStampOfLastSpawn == undefined || timeStamp - TimeStampOfLastSpawn > 3475 )
-    {  
+
+    // Add new running images
+    if ((RunningImages.length * ImageWidth) + ScrollingCanvasX < canvas.width)
+    {
         function filterToNotRunning(imageToFilter)
         {
             if (imageToFilter["Running"] == false)
@@ -86,12 +124,21 @@ function UpdateCanvas(timeStamp) {
             return false;
         }
         var nonRunningImages = AnimatedImages.filter(filterToNotRunning)
-        var randomIndex = Math.floor(Math.random() * (nonRunningImages.length - 1));
-        animatedImage = nonRunningImages[randomIndex]
-        animatedImage["X"] = Math.floor(canvas.width);
-        animatedImage["Running"] = true;
-        TimeStampOfLastSpawn = timeStamp;
+
+
+        while ((RunningImages.length * ImageWidth) + ScrollingCanvasX < canvas.width)
+        {
+            let randomIndex = Math.floor(Math.random() * (nonRunningImages.length - 1));
+            let selectedImageObject = nonRunningImages[randomIndex]
+            selectedImageObject["Running"] = true;
+
+            nonRunningImages.splice(randomIndex, 1);
+            RunningImages.push(selectedImageObject);
+
+            ctx.drawImage(selectedImageObject["OffscreenCanvas"], (RunningImages.length - 1 * ImageWidth) + ScrollingCanvasX, 0)
+        }
     }
+
 
     // Set overlay to semi transparent black
     ctx.fillStyle = "black";
