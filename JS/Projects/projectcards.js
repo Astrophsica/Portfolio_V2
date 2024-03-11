@@ -121,8 +121,9 @@ function CreateProjectCard(yearCard, project, projectId)
 }
 
 
-function OnTagButtonClick(buttonElement)
+const OnTagButtonClick = e =>
 {
+    var buttonElement = e.target
     console.log(buttonElement.textContent)
     var tagName = buttonElement.textContent
 
@@ -163,12 +164,12 @@ function OnTagButtonClick(buttonElement)
     var projectCards = document.getElementsByClassName("project")
     for (var projectIndex = 0; projectIndex < projectCards.length; projectIndex++)
     {
-        projectElement = projectCards[projectIndex]
-        showProject = true
+        var projectElement = projectCards[projectIndex]
+        var showProject = true
 
         if (filterActive)
         {
-            var showProject = false
+            showProject = false
             var badges = projectElement.querySelectorAll(".badge")
             for (var badgeIndex = 0; badgeIndex < badges.length; badgeIndex++)
             {
@@ -196,7 +197,7 @@ function OnTagButtonClick(buttonElement)
     for (var yearIndex = 0; yearIndex < yearCards.length; yearIndex++)
     {
         var yearElement = yearCards[yearIndex]
-        var hiddenCards = yearElement.querySelectorAll(".hidden")
+        var hiddenCards = yearElement.querySelectorAll(".project.hidden")
         var cards = yearElement.querySelectorAll(".project")
         
         if (hiddenCards.length == cards.length)
@@ -235,8 +236,8 @@ for (var tagKey in Tags)
     var buttonElement = document.createElement("button")
     buttonElement.setAttribute("type", "button")
     buttonElement.setAttribute("class", "m-1 btn btn-sm btn-outline-" + Tags[tagKey]["Type"])
-    buttonElement.setAttribute("onclick", "OnTagButtonClick(this)")
     buttonElement.textContent = tagKey
+    buttonElement.addEventListener('click', OnTagButtonClick)
     tagsSection.appendChild(buttonElement)
 }
 
