@@ -108,6 +108,11 @@ function UpdateCanvas(timeStamp) {
             break;
         }
 
+        if (imageObject == null)
+        {
+            break;
+        }
+
         ctx.drawImage(imageObject["OffscreenCanvas"], (i * ImageWidth) + ScrollingCanvasX, 0)
     }
 
