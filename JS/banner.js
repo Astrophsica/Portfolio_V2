@@ -43,7 +43,6 @@ function CreateAnimatedImageObject(imgElement)
 {
     return {
     ["ImgElement"] : imgElement,
-    ["Running"] : false,
     ["OffscreenCanvas"] : CreateOffscreenCanvas(imgElement)
     }
 }
@@ -86,34 +85,33 @@ function UpdateCanvas(timeStamp) {
 
     // Update existing images
     ScrollingCanvasX -= 0.1 * deltaTime
-    
-    for (let i = 0; i < RunningImages.length; i++) 
-    { 
-        let imageObject = RunningImages[i];
+    if (ScrollingCanvasX < -ImageWidth - 50)
+    {
+        ScrollingCanvasX = -ImageWidth
+    }
+
+    var runningImgIndex = 0
+    while (RunningImages.length > runningImgIndex)
+    {
+        let imageObject = RunningImages[runningImgIndex];
         
         // Check if image is not visible (left side)
-        if ((i * ImageWidth) + ScrollingCanvasX < 0 - ImageWidth)
+        if ((runningImgIndex * ImageWidth) + ScrollingCanvasX <= 0 - ImageWidth)
         {
-            imageObject["Running"] = false;
             RunningImages.shift();
             ScrollingCanvasX = ScrollingCanvasX + ImageWidth;
-            imageObject = RunningImages[i];
+            continue
         }
 
         // Check if image is not visible (right side)
-        if((i * ImageWidth) + ScrollingCanvasX > canvas.width)
+        if((runningImgIndex * ImageWidth) + ScrollingCanvasX > canvas.width)
         {
-            imageObject["Running"] = false;
-            RunningImages.splice(i)
+            RunningImages.splice(runningImgIndex)
             break;
         }
 
-        if (imageObject == null)
-        {
-            break;
-        }
-
-        ctx.drawImage(imageObject["OffscreenCanvas"], (i * ImageWidth) + ScrollingCanvasX, 0)
+        ctx.drawImage(imageObject["OffscreenCanvas"], (runningImgIndex * ImageWidth) + ScrollingCanvasX, 0)
+        runningImgIndex += 1
     }
 
 
@@ -122,11 +120,11 @@ function UpdateCanvas(timeStamp) {
     {
         function filterToNotRunning(imageToFilter)
         {
-            if (imageToFilter["Running"] == false)
+            if (RunningImages.includes(imageToFilter))
             {
-                return true;
+                return false
             }
-            return false;
+            return true
         }
         var nonRunningImages = AnimatedImages.filter(filterToNotRunning)
 
@@ -135,7 +133,6 @@ function UpdateCanvas(timeStamp) {
         {
             let randomIndex = Math.floor(Math.random() * (nonRunningImages.length - 1));
             let selectedImageObject = nonRunningImages[randomIndex]
-            selectedImageObject["Running"] = true;
 
             nonRunningImages.splice(randomIndex, 1);
             RunningImages.push(selectedImageObject);
