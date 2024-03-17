@@ -164,7 +164,7 @@ function UpdateCanvas(timeStamp) {
         textActualSize = ctx.measureText(text)
     }
 
-    ctx.fillText(text, (canvas.width / 2) - textActualSize.width / 2, (canvas.height / 2) + textActualSize.emHeightAscent / 2)
+    ctx.fillText(text, Math.floor((canvas.width / 2) - textActualSize.width / 2), Math.floor((canvas.height / 2) + textActualSize.emHeightAscent / 2))
 
     PrevoiusTimeStamp = timeStamp;
     requestAnimationFrame(UpdateCanvas);
