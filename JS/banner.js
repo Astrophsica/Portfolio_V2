@@ -1,6 +1,7 @@
 import { Projects } from "./Projects/projects.js";
 import { LodLoadMedia } from "./mediamanager.js";
 
+
 // Banner
 const canvas = document.getElementById("banner");
 const ctx = canvas.getContext("2d");
@@ -13,13 +14,50 @@ const ImageWidth = 355;
 const ImageHeight = 200;
 var ScrollingCanvasX = 0;
 var RunningImages = [];
+var canvasId = 0
+var ActiveGifs = []
 
-
-async function UpdateImageOnSrcChange(imgElement, canvasCtx)
+async function UpdateImageOnSrcChange(imgElement, canvasCtx, canvas, canvasId)
 {
     var observer = new MutationObserver((changes) => {
         changes.forEach(change => {
             if(change.attributeName.includes('src')){
+                if (imgElement.src == "")
+                {
+                    return
+                }
+                let fileType = imgElement.src.split('.').pop();
+
+                if (fileType == "gif")
+                {
+
+
+                    var gif = gifler(imgElement.src)
+                    var animatorPromise = gif.animate(canvas)
+
+                    function ProcessAnimatorPromise(animatorPromise, canvasId)
+                    {
+                        animatorPromise.then(function(animator)
+                        {
+                            for (var i; i < ActiveGifs.length; i++)
+                            {
+                                if (i == ActiveGifs[i].CanvasId)
+                                {
+                                    ActiveGifs[i].Animator.stop()
+                                    ActiveGifs.splice(i, 1)
+                                }
+                            }
+                            
+                            ActiveGifs.push({
+                                CanvasId: canvasId,
+                                Animator: animator
+                            })
+                        })
+                    }
+
+                    ProcessAnimatorPromise(animatorPromise, canvasId)
+                    return
+                }
                 canvasCtx.drawImage(imgElement, 0, 0, ImageWidth, ImageHeight);
             }
         });
@@ -35,7 +73,8 @@ function CreateOffscreenCanvas(imgElement)
     const newCanvasCtx = newCanvas.getContext("2d");
 
     newCanvasCtx.drawImage(imgElement, 0, 0, ImageWidth, ImageHeight)
-    UpdateImageOnSrcChange(imgElement, newCanvasCtx)
+    UpdateImageOnSrcChange(imgElement, newCanvasCtx, newCanvas, canvasId)
+    canvasId += 1
     return newCanvas
 }
 

@@ -40,7 +40,9 @@ Gif = (function() {
       return element;
     } else if ((selector != null ? selector.tagName : void 0) === 'CANVAS') {
       return selector;
-    } else {
+    } else if(selector.constructor.name == "OffscreenCanvas"){
+      return selector;
+    }else {
       throw new Error('Unexpected selector type. Valid types are query-selector-string/canvas-element');
     }
   };
@@ -333,7 +335,7 @@ Animator = (function() {
   Animator.prototype.animateInCanvas = function(canvas, setDimensions) {
     var ctx;
     if (setDimensions == null) {
-      setDimensions = true;
+      setDimensions = false;
     }
     if (setDimensions) {
       canvas.width = this.width;
